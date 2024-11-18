@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: Artisan
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:postgresql://localhost:5432/artisan
+    username: artisan
+    password: artisanPassword
