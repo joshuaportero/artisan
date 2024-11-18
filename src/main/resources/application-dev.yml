@@ -11,3 +11,9 @@ spring:
     url: jdbc:postgresql://localhost:5432/artisan
     username: artisan
     password: artisanPassword
+application:
+  security:
+    cors:
+      allowed-origins: "*"
+      allowed-methods: "GET,POST,PUT,DELETE"
+      allowed-headers: "Content-Type,Authorization"

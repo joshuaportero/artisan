@@ -10,3 +10,9 @@ spring:
     open-in-view: false
   datasource:
     url: ${PSQL_URL}
+application:
+  security:
+    cors:
+      allowed-origins: ${CORS_ALLOWED_ORIGINS}
+      allowed-methods: ${CORS_ALLOWED_METHODS}
+      allowed-headers: ${CORS_ALLOWED_HEADERS}
