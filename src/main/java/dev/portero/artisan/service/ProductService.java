@@ -2,7 +2,7 @@ package dev.portero.artisan.service;
 
 import dev.portero.artisan.controller.product.dto.CreateProductRequest;
 import dev.portero.artisan.domain.product.Product;
-import dev.portero.artisan.domain.product.ProductStatus;
+import dev.portero.artisan.domain.product.types.ProductStatus;
 import dev.portero.artisan.repository.ProductRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,8 +16,9 @@ public class ProductService {
 
     private final ProductRepository repository;
 
-    public List<Product> getProducts() {
-        return repository.findAll();
+    public ResponseEntity<?> getProducts() {
+        List<Product> products = repository.findAll();
+        return products.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(products);
     }
 
     public Product createProduct(CreateProductRequest product) {

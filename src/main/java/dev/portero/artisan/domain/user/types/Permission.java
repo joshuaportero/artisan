@@ -1,4 +1,4 @@
-package dev.portero.artisan.domain.user;
+package dev.portero.artisan.domain.user.types;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
