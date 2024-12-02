@@ -1,4 +1,4 @@
-package dev.portero.artisan.controller.user.dto;
+package dev.portero.artisan.security.dto;
 
 import lombok.Getter;
 import lombok.Setter;
