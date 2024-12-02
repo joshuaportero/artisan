@@ -1,6 +1,6 @@
 package dev.portero.artisan.controller.user;
 
-import dev.portero.artisan.controller.user.dto.ChangePasswordRequest;
+import dev.portero.artisan.security.dto.ChangePasswordRequest;
 import dev.portero.artisan.domain.user.User;
 import dev.portero.artisan.service.UserService;
 import lombok.RequiredArgsConstructor;
