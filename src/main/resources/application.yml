@@ -21,15 +21,3 @@ application:
       expiration: ${JWT_TOKEN_EXPIRATION}
       refresh-token:
         expiration: ${JWT_REFRESH_TOKEN_EXPIRATION}
-    oauth2:
-      client:
-        registration:
-          google:
-            client-id: ${GOOGLE_CLIENT_ID}
-            client-secret: ${GOOGLE_CLIENT_SECRET}
-            scope: ${GOOGLE_SCOPE}
-        provider:
-          google:
-            authorization-uri: ${GOOGLE_AUTHORIZATION_URI}
-            token-uri: ${GOOGLE_TOKEN_URI}
-            user-info-uri: ${GOOGLE_USER_INFO_URI}

@@ -55,22 +55,12 @@ public class SecurityConfiguration {
                                 .requestMatchers(HttpMethod.PUT, "/api/v1/products/**").hasRole(Role.ADMIN.name())
                                 .requestMatchers(HttpMethod.DELETE, "/api/v1/products/**").hasRole(Role.ADMIN.name())
                                 .anyRequest()
-                                .authenticated()
-                )
-                .sessionManagement(session ->
-                        session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                )
-                .oauth2ResourceServer(auth ->
-                        auth.jwt(Customizer.withDefaults())
-                )
+                                .authenticated())
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider)
-                .logout(logout ->
-                        logout.logoutUrl("/api/v1/auth/logout")
+                .logout(logout -> logout.logoutUrl("/api/v1/auth/logout")
                                 .addLogoutHandler(logoutHandler)
-                                .logoutSuccessHandler((request, response, authentication) ->
-                                        SecurityContextHolder.clearContext()
-                                )
-                );
+                                .logoutSuccessHandler((request, response, authentication) -> SecurityContextHolder.clearContext()));
         return http.build();
     }
 

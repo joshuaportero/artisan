@@ -5,7 +5,6 @@ import dev.portero.artisan.security.dto.AuthResponse;
 import dev.portero.artisan.security.dto.RegisterRequest;
 import dev.portero.artisan.security.service.AuthService;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,7 +30,7 @@ public class AuthController {
     }
 
     @PostMapping("/refresh-token")
-    public void refreshToken(HttpServletRequest request, HttpServletResponse response) {
-        service.refreshToken(request, response);
+    public ResponseEntity<?> refreshToken(HttpServletRequest request) {
+        return service.refreshToken(request);
     }
 }
