@@ -16,3 +16,8 @@ application:
       allowed-origins: ${CORS_ALLOWED_ORIGINS}
       allowed-methods: ${CORS_ALLOWED_METHODS}
       allowed-headers: ${CORS_ALLOWED_HEADERS}
+    jwt:
+      secret-key: ${JWT_SECRET_KEY}
+      expiration: ${JWT_TOKEN_EXPIRATION}
+      refresh-token:
+        expiration: ${JWT_REFRESH_TOKEN_EXPIRATION}

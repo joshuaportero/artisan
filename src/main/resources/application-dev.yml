@@ -15,5 +15,10 @@ application:
   security:
     cors:
       allowed-origins: "*"
-      allowed-methods: "GET,POST,PUT,DELETE"
-      allowed-headers: "Content-Type,Authorization"
+      allowed-methods: "GET,POST,PUT,DELETE,OPTIONS"
+      allowed-headers: "Content-Type,Authorizations"
+    jwt:
+      secret-key: 4dbe84a8c7160e9c2aa9bbf281d612096cbd70c2ef2bfe7de27b1396cf064e1a
+      expiration: 3600
+      refresh-token:
+        expiration: 86400
